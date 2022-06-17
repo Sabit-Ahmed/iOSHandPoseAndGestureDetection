@@ -130,35 +130,35 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                 return
             }
             // Get points for all fingers
-            let thumbPoints = try observation.recognizedPoints(forGroupKey: .handLandmarkRegionKeyThumb)
-            let indexFingerPoints = try observation.recognizedPoints(forGroupKey: .handLandmarkRegionKeyIndexFinger)
-            let middleFingerPoints = try observation.recognizedPoints(forGroupKey: .handLandmarkRegionKeyMiddleFinger)
-            let ringFingerPoints = try observation.recognizedPoints(forGroupKey: .handLandmarkRegionKeyRingFinger)
-            let littleFingerPoints = try observation.recognizedPoints(forGroupKey: .handLandmarkRegionKeyLittleFinger)
+            let thumbPoints = try observation.recognizedPoints(forGroupKey: VNHumanHandPoseObservation.JointsGroupName.thumb.rawValue)
+            let indexFingerPoints = try observation.recognizedPoints(forGroupKey: VNHumanHandPoseObservation.JointsGroupName.indexFinger.rawValue)
+            let middleFingerPoints = try observation.recognizedPoints(forGroupKey: VNHumanHandPoseObservation.JointsGroupName.middleFinger.rawValue)
+            let ringFingerPoints = try observation.recognizedPoints(forGroupKey: VNHumanHandPoseObservation.JointsGroupName.ringFinger.rawValue)
+            let littleFingerPoints = try observation.recognizedPoints(forGroupKey: VNHumanHandPoseObservation.JointsGroupName.littleFinger.rawValue)
             let wristPoints = try observation.recognizedPoints(forGroupKey: .all)
             
             // Extract individual points from Point groups.
-            guard let thumbTipPoint = thumbPoints[.handLandmarkKeyThumbTIP],
-                  let thumbIpPoint = thumbPoints[.handLandmarkKeyThumbIP],
-                  let thumbMpPoint = thumbPoints[.handLandmarkKeyThumbMP],
-                  let thumbCmcPoint = thumbPoints[.handLandmarkKeyThumbCMC],
-                  let indexTipPoint = indexFingerPoints[.handLandmarkKeyIndexTIP],
-                  let indexDipPoint = indexFingerPoints[.handLandmarkKeyIndexDIP],
-                  let indexPipPoint = indexFingerPoints[.handLandmarkKeyIndexPIP],
-                  let indexMcpPoint = indexFingerPoints[.handLandmarkKeyIndexMCP],
-                  let middleTipPoint = middleFingerPoints[.handLandmarkKeyMiddleTIP],
-                  let middleDipPoint = middleFingerPoints[.handLandmarkKeyMiddleDIP],
-                  let middlePipPoint = middleFingerPoints[.handLandmarkKeyMiddlePIP],
-                  let middleMcpPoint = middleFingerPoints[.handLandmarkKeyMiddleMCP],
-                  let ringTipPoint = ringFingerPoints[.handLandmarkKeyRingTIP],
-                  let ringDipPoint = ringFingerPoints[.handLandmarkKeyRingDIP],
-                  let ringPipPoint = ringFingerPoints[.handLandmarkKeyRingPIP],
-                  let ringMcpPoint = ringFingerPoints[.handLandmarkKeyRingMCP],
-                  let littleTipPoint = littleFingerPoints[.handLandmarkKeyLittleTIP],
-                  let littleDipPoint = littleFingerPoints[.handLandmarkKeyLittleDIP],
-                  let littlePipPoint = littleFingerPoints[.handLandmarkKeyLittlePIP],
-                  let littleMcpPoint = littleFingerPoints[.handLandmarkKeyLittleMCP],
-                  let wristPoint = wristPoints[.handLandmarkKeyWrist] else {
+            guard let thumbTipPoint = thumbPoints[VNHumanHandPoseObservation.JointName.thumbTip.rawValue],
+                  let thumbIpPoint = thumbPoints[VNHumanHandPoseObservation.JointName.thumbIP.rawValue],
+                  let thumbMpPoint = thumbPoints[VNHumanHandPoseObservation.JointName.thumbMP.rawValue],
+                  let thumbCmcPoint = thumbPoints[VNHumanHandPoseObservation.JointName.thumbCMC.rawValue],
+                  let indexTipPoint = indexFingerPoints[VNHumanHandPoseObservation.JointName.indexTip.rawValue],
+                  let indexDipPoint = indexFingerPoints[VNHumanHandPoseObservation.JointName.indexDIP.rawValue],
+                  let indexPipPoint = indexFingerPoints[VNHumanHandPoseObservation.JointName.indexPIP.rawValue],
+                  let indexMcpPoint = indexFingerPoints[VNHumanHandPoseObservation.JointName.indexMCP.rawValue],
+                  let middleTipPoint = middleFingerPoints[VNHumanHandPoseObservation.JointName.middleTip.rawValue],
+                  let middleDipPoint = middleFingerPoints[VNHumanHandPoseObservation.JointName.middleDIP.rawValue],
+                  let middlePipPoint = middleFingerPoints[VNHumanHandPoseObservation.JointName.middlePIP.rawValue],
+                  let middleMcpPoint = middleFingerPoints[VNHumanHandPoseObservation.JointName.middleMCP.rawValue],
+                  let ringTipPoint = ringFingerPoints[VNHumanHandPoseObservation.JointName.ringTip.rawValue],
+                  let ringDipPoint = ringFingerPoints[VNHumanHandPoseObservation.JointName.ringDIP.rawValue],
+                  let ringPipPoint = ringFingerPoints[VNHumanHandPoseObservation.JointName.ringPIP.rawValue],
+                  let ringMcpPoint = ringFingerPoints[VNHumanHandPoseObservation.JointName.ringMCP.rawValue],
+                  let littleTipPoint = littleFingerPoints[VNHumanHandPoseObservation.JointName.littleTip.rawValue],
+                  let littleDipPoint = littleFingerPoints[VNHumanHandPoseObservation.JointName.littleDIP.rawValue],
+                  let littlePipPoint = littleFingerPoints[VNHumanHandPoseObservation.JointName.littlePIP.rawValue],
+                  let littleMcpPoint = littleFingerPoints[VNHumanHandPoseObservation.JointName.littleMCP.rawValue],
+                  let wristPoint = wristPoints[VNHumanHandPoseObservation.JointName.wrist.rawValue] else {
                 cameraView.showPoints([])
                 return
             }

@@ -299,7 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HAFX6G88W7;
+				DEVELOPMENT_TEAM = BD7Y2B4ZKU;
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Vision-HandPose/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,7 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HAFX6G88W7;
+				DEVELOPMENT_TEAM = BD7Y2B4ZKU;
 				INFOPLIST_FILE = "$(SRCROOT)/iOS-Vision-HandPose/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
